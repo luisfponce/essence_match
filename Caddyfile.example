@@ -1,0 +1,7 @@
+{
+  email admin@example.com
+}
+
+example.com {
+  reverse_proxy frontend:80
+}

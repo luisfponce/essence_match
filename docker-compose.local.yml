@@ -1,0 +1,13 @@
+services:
+  backend:
+    ports:
+      - "${BACKEND_PORT:-8000}:8000"
+  frontend:
+    ports:
+      - "${FRONTEND_PORT:-8080}:80"
+  mariadb:
+    ports:
+      - "${DB_PORT:-3306}:3306"
+  redis:
+    ports:
+      - "${REDIS_PORT:-6379}:6379"
