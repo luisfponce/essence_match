@@ -5,9 +5,9 @@ services:
   frontend:
     ports:
       - "${FRONTEND_PORT:-8080}:80"
-  mariadb:
+  postgres:
     ports:
-      - "${DB_PORT:-3306}:3306"
+      - "${DB_PORT:-5432}:5432"
   redis:
     ports:
       - "${REDIS_PORT:-6379}:6379"

@@ -33,19 +33,19 @@ are not medical advice, diagnosis, or treatment.
 - Submit a free-text wellness prompt and receive deterministic matches.
 - JWT-based user registration and login.
 - Health endpoint for service monitoring.
-- Docker Compose stack with backend, frontend, MariaDB, and Redis.
+- Docker Compose stack with backend, frontend, PostgreSQL, and Redis.
 - Alembic scaffolding for future database migrations.
 
 ## Tech Stack
 
-| Layer       | Technology               |
-|-------------|--------------------------|
-| Frontend    | React, TypeScript, Vite |
-| Backend     | FastAPI, SQLAlchemy      |
-| Database    | MariaDB                  |
-| Cache/State | Redis                    |
-| Proxy       | Caddy (optional)         |
-| CI          | GitHub Actions           |
+| Layer       | Technology                  |
+|-------------|-----------------------------|
+| Frontend    | React, TypeScript, Vite     |
+| Backend     | FastAPI, SQLAlchemy         |
+| Database    | PostgreSQL 17               |
+| Cache/State | Redis                       |
+| Proxy       | Caddy (optional)            |
+| CI          | GitHub Actions              |
 
 ## Prerequisites
 
@@ -64,11 +64,11 @@ cp .env.example .env
 
 ## Configuration
 
-| Variable         | Purpose                              | Default                         |
-|------------------|--------------------------------------|---------------------------------|
-| `DATABASE_URL`   | MariaDB connection string            | `mysql+pymysql://app:change-me@mariadb:3306/app` |
-| `REDIS_URL`      | Redis connection string              | `redis://redis:6379/0`          |
-| `JWT_SECRET_KEY` | Secret for auth token signing        | `change-this-local-development-secret` |
+| Variable         | Purpose                              | Default                                           |
+|------------------|--------------------------------------|---------------------------------------------------|
+| `DATABASE_URL`   | PostgreSQL connection string         | `postgresql+psycopg://app:change-me@postgres:5432/app` |
+| `REDIS_URL`      | Redis connection string              | `redis://redis:6379/0`                            |
+| `JWT_SECRET_KEY` | Secret for auth token signing        | `change-this-local-development-secret`            |
 
 See `.env.example` for the full set of variables.
 
@@ -107,7 +107,7 @@ pip install -e '.[dev]'
 uvicorn app.main:app --reload
 ```
 
-The local backend needs a reachable `DATABASE_URL`. The Compose MariaDB service
+The local backend needs a reachable `DATABASE_URL`. The Compose PostgreSQL service
 can provide that database when running locally.
 
 Frontend:

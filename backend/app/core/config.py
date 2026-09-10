@@ -10,7 +10,7 @@ class Settings(BaseSettings):
     project_name: str = Field(default="EssenceMatch", validation_alias="PROJECT_NAME")
     environment: str = Field(default="local", validation_alias="ENVIRONMENT")
     api_v1_prefix: str = Field(default="/api/v1", validation_alias="API_V1_PREFIX")
-    database_url: str = Field(default="mysql+pymysql://app:change-me@mariadb:3306/app", validation_alias="DATABASE_URL")
+    database_url: str = Field(default="postgresql+psycopg://app:change-me@postgres:5432/app", validation_alias="DATABASE_URL")
     jwt_secret_key: str = Field(default="change-this-local-development-secret", validation_alias="JWT_SECRET_KEY")
     jwt_algorithm: str = Field(default="HS256", validation_alias="JWT_ALGORITHM")
     access_token_expire_minutes: int = Field(default=30, validation_alias="ACCESS_TOKEN_EXPIRE_MINUTES")

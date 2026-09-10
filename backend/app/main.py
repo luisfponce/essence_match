@@ -5,14 +5,13 @@ from fastapi import FastAPI
 
 from app.api.router import api_router
 from app.core.config import settings
-from app.db.session import SessionLocal, ensure_catalog_schema, init_db
+from app.db.session import SessionLocal, init_db
 from app.services.catalog_seed import seed_catalog
 
 
 @asynccontextmanager
 async def lifespan(_: FastAPI) -> AsyncIterator[None]:
     init_db()
-    ensure_catalog_schema()
     with SessionLocal() as session:
         seed_catalog(session)
     yield
