@@ -14,7 +14,6 @@ class Settings(BaseSettings):
     jwt_secret_key: str = Field(default="change-this-local-development-secret", validation_alias="JWT_SECRET_KEY")
     jwt_algorithm: str = Field(default="HS256", validation_alias="JWT_ALGORITHM")
     access_token_expire_minutes: int = Field(default=30, validation_alias="ACCESS_TOKEN_EXPIRE_MINUTES")
-    redis_url: str = Field(default="redis://redis:6379/0", validation_alias="REDIS_URL")
 
 
 @lru_cache

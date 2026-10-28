@@ -33,7 +33,7 @@ are not medical advice, diagnosis, or treatment.
 - Submit a free-text wellness prompt and receive deterministic matches.
 - JWT-based user registration and login.
 - Health endpoint for service monitoring.
-- Docker Compose stack with backend, frontend, PostgreSQL, and Redis.
+- Docker Compose stack with backend, frontend, and PostgreSQL.
 - Alembic scaffolding for future database migrations.
 
 ## Tech Stack
@@ -43,7 +43,7 @@ are not medical advice, diagnosis, or treatment.
 | Frontend    | React, TypeScript, Vite     |
 | Backend     | FastAPI, SQLAlchemy         |
 | Database    | PostgreSQL 17               |
-| Cache/State | Redis                       |
+| Cache/State | (optional/unconsumed)       |
 | Proxy       | Caddy (optional)            |
 | CI          | GitHub Actions              |
 
@@ -67,7 +67,6 @@ cp .env.example .env
 | Variable         | Purpose                              | Default                                           |
 |------------------|--------------------------------------|---------------------------------------------------|
 | `DATABASE_URL`   | PostgreSQL connection string         | `postgresql+psycopg://app:change-me@postgres:5432/app` |
-| `REDIS_URL`      | Redis connection string              | `redis://redis:6379/0`                            |
 | `JWT_SECRET_KEY` | Secret for auth token signing        | `change-this-local-development-secret`            |
 
 See `.env.example` for the full set of variables.

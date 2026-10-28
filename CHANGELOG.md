@@ -15,7 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Catalog seeded at startup with six essence items.
 - JWT-based register and login endpoints.
 - React + TypeScript + Vite frontend with catalog browsing and recommendation UI.
-- Docker Compose stack for backend, frontend, MariaDB, and Redis.
+- Docker Compose stack for backend, frontend, and PostgreSQL.
 - GitHub Actions CI running backend pytest and frontend lint, test, and build.
 - Alembic scaffolding for future database migrations.
 - MIT license, contributing guide, code of conduct, and security policy.
